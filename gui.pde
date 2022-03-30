@@ -31,19 +31,23 @@ public void button1_click1(GButton source, GEvent event) { //_CODE_:button1:7823
 } //_CODE_:button1:782325:
 
 public void checkbox1_clicked1(GCheckbox source, GEvent event) { //_CODE_:checkbox1:698465:
-  println("checkbox1 - GCheckbox >> GEvent." + event + " @ " + millis());
+  if (event.toString().equals("DESELECTED") && !(checkbox2.isSelected()) && !(checkbox3.isSelected()) && !(checkbox4.isSelected())) checkbox1.setSelected(true);
+  //println("checkbox1 - GCheckbox >> GEvent." + event + " @ " + millis());
 } //_CODE_:checkbox1:698465:
 
 public void checkbox2_clicked1(GCheckbox source, GEvent event) { //_CODE_:checkbox2:563426:
-  println("checkbox2 - GCheckbox >> GEvent." + event + " @ " + millis());
+  if (event.toString().equals("DESELECTED") && !(checkbox1.isSelected()) && !(checkbox3.isSelected()) && !(checkbox4.isSelected())) checkbox2.setSelected(true);
+  //println("checkbox2 - GCheckbox >> GEvent." + event + " @ " + millis());
 } //_CODE_:checkbox2:563426:
 
 public void checkbox3_clicked1(GCheckbox source, GEvent event) { //_CODE_:checkbox3:602290:
-  println("checkbox3 - GCheckbox >> GEvent." + event + " @ " + millis());
+  if (event.toString().equals("DESELECTED") && !(checkbox1.isSelected()) && !(checkbox2.isSelected()) && !(checkbox4.isSelected())) checkbox3.setSelected(true);
+  //println("checkbox3 - GCheckbox >> GEvent." + event + " @ " + millis());
 } //_CODE_:checkbox3:602290:
 
 public void checkbox4_clicked1(GCheckbox source, GEvent event) { //_CODE_:checkbox4:614109:
-  println("checkbox4 - GCheckbox >> GEvent." + event + " @ " + millis());
+  if (event.toString().equals("DESELECTED") && !(checkbox1.isSelected()) && !(checkbox2.isSelected()) && !(checkbox3.isSelected())) checkbox4.setSelected(true);
+  //println("checkbox4 - GCheckbox >> GEvent." + event + " @ " + millis());
 } //_CODE_:checkbox4:614109:
 
 

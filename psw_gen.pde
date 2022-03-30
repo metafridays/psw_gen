@@ -21,38 +21,27 @@ public void draw(){
 
 public String generate(int l) {
   // Initial setup
+  boolean alow = checkbox1.isSelected();
+  boolean ahigh = checkbox2.isSelected();
+  boolean nums = checkbox3.isSelected();
+  boolean syms = checkbox4.isSelected();
   char[] alphabetlow = { 'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z' };
   char[] alphabethigh = { 'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z' };
   char[] numbers = { '1','2','3','4','5','6','7','8','9','0' };
   char[] symbols = { '!','"',';','%',':','?','*','(',')','_','+','=','-','~','/','\\','<','>',',','.','[',']','{','}' };
   char[] pswd = new char[l];
-   
+    
   // Filling pswd string
   for (int i = 0; i < l; i++) {
-     switch(int(random(1, 4.9))) {
-         case 1 :
-           if (checkbox1.isSelected()) pswd[i] = alphabetlow[int(random(0, alphabetlow.length))];
-           break;
-         case 2 :
-           if (checkbox2.isSelected()) pswd[i] = alphabethigh[int(random(0, alphabethigh.length))];
-           break;
-         case 3 :
-           if (checkbox3.isSelected()) pswd[i] = numbers[int(random(0, numbers.length))];
-           break;
-         case 4 :
-           if (checkbox4.isSelected()) pswd[i] = symbols[int(random(0, symbols.length))];
-           break;
-     } 
+    char[] t = new char[0];
+    if (alow) t = append(t, alphabetlow[int(random(0, alphabetlow.length) - 0.1)]);
+    if (ahigh) t = append(t, alphabethigh[int(random(0, alphabethigh.length) - 0.1)]);
+    if (nums) t = append(t, numbers[int(random(0, numbers.length) - 0.1)]);
+    if (syms) t = append(t, symbols[int(random(0, symbols.length) - 0.1)]);
+    pswd[i] = t[int(random(0, t.length - 0.1))];
   }
-   
-   
-   
- // while (true) {
-       
-  // }
-   
+
    return new String(pswd);
-   
 }
 
 // Use this method to add additional statements
